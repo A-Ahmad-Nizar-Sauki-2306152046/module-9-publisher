@@ -41,3 +41,5 @@ Spike muncul karena:
 Jika publisher dijalankan berulang kali, maka akan terlihat beberapa spike tambahan pada grafik. Setiap spike menunjukkan satu kali eksekusi publisher yang mengirim sekumpulan pesan ke broker.
 
 Kesimpulannya, spike pada monitoring chart menunjukkan bahwa publisher berhasil mengirim pesan ke RabbitMQ, dan jumlah spike bertambah setiap kali publisher dijalankan kembali.
+
+<img width="1066" height="508" alt="Image" src="https://github.com/user-attachments/assets/dc06007f-39c0-4fbd-bd16-e41e34dec6c4" />
