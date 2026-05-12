@@ -24,3 +24,5 @@ Penjelasan komponennya:
 Dengan menggunakan URL yang sama, publisher bisa mengirim pesan ke broker, dan subscriber dapat menerima pesan dari broker tersebut
 
 <img width="2560" height="1422" alt="Image" src="https://github.com/user-attachments/assets/831ddf6e-b60b-442c-bfd0-b74ec3ae2e83" />
+
+<img width="2560" height="1500" alt="Image" src="https://github.com/user-attachments/assets/835c52c9-52f1-4d95-967a-9b4a40c95831" />
