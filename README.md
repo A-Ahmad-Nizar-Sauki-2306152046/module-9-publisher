@@ -26,3 +26,18 @@ Dengan menggunakan URL yang sama, publisher bisa mengirim pesan ke broker, dan s
 <img width="2560" height="1422" alt="Image" src="https://github.com/user-attachments/assets/831ddf6e-b60b-442c-bfd0-b74ec3ae2e83" />
 
 <img width="2560" height="1500" alt="Image" src="https://github.com/user-attachments/assets/835c52c9-52f1-4d95-967a-9b4a40c95831" />
+
+
+Setelah RabbitMQ dijalankan dan dashboard dibuka melalui `http://localhost:15672`, pada halaman overview terdapat grafik **Message rates**. Grafik ini menampilkan aktivitas pengiriman dan penerimaan pesan pada broker.
+
+Ketika program publisher dijalankan, terlihat spike (lonjakan) pada grafik **Publish**. Lonjakan ini terjadi karena publisher mengirim beberapa pesan ke message broker dalam waktu singkat. Pada program ini, publisher mengirim 5 event, sehingga RabbitMQ mencatat adanya peningkatan aktivitas publish sesaat.
+
+Spike muncul karena:
+- Setiap pemanggilan `publish_event()` akan mengirim satu pesan ke broker.
+- Semua pesan dikirim hampir bersamaan ketika program dijalankan.
+- RabbitMQ mencatat aktivitas tersebut dalam grafik sebagai lonjakan sementara.
+- Setelah semua pesan selesai dikirim, grafik kembali turun ke 0 karena tidak ada aktivitas publish lanjutan.
+
+Jika publisher dijalankan berulang kali, maka akan terlihat beberapa spike tambahan pada grafik. Setiap spike menunjukkan satu kali eksekusi publisher yang mengirim sekumpulan pesan ke broker.
+
+Kesimpulannya, spike pada monitoring chart menunjukkan bahwa publisher berhasil mengirim pesan ke RabbitMQ, dan jumlah spike bertambah setiap kali publisher dijalankan kembali.
